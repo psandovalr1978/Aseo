@@ -1,0 +1,7 @@
+{
+  "name": "app-ecoclean",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
