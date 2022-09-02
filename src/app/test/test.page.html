@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Test de Posteos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item *ngFor="let item of posteos">
+      <ion-badge slot="start">{{item.id}}</ion-badge>
+
+      <ion-label class="ion-text-wrap">{{item.body}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

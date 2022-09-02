@@ -1,0 +1,26 @@
+[
+  {
+    "img": "../assets/img/prod1.png",
+    "titulo": "Klimpler",
+    "subTitulo":"Limpieza Para Todo Uso",
+    "descripcion": "Ha desarrollado productos de la más alta calidad, contando con su propio laboratorio, para resolver con mayor prontitud y profesionalismo los requerimientos de cada cliente.Conscientes de los altos niveles de exigencia en el mercado, fabricamos y distribuimos más de 100 productos relacionados con la limpieza e higienización"
+  },
+  {
+    "img": "../assets/img/prod2.png",
+    "titulo": "Uno Servicios Auno",
+    "subTitulo":"Para La Oficina",
+    "descripcion": "El propósito de suministrar personal especializado para prestar servicios de aseo y mantenimiento, basados en nuestra experiencia con un grupo de personas capacitadas en todas las áreas de limpieza. Brindando atención personalizada y permanente con eficiencia y agilidad a cada uno de nuestros clientes."
+  },
+  {
+    "img": "../assets/img/prod3.png",
+    "titulo": "To Day",
+    "subTitulo":"Para todo el día y más.",
+    "descripcion": ""
+  },
+  {
+    "img": "../assets/img/prod4.png",
+    "titulo": "Seek",
+    "subTitulo":"La Mejor Calidad ",
+    "descripcion": "Un sin fin de cosas para el día a día"
+  }
+]
