@@ -1,13 +1,7 @@
-ion-slides{
-  height: 55%;
+ion-content {
+  --background: url('https://img.freepik.com/foto-gratis/fondo-creativo-lineas-blancas_23-2148811504.jpg?w=2000') 0 0/100% 100% no-repeat;
 }
 
-ion-img  {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
- }
- .cat {
-  height:200px;
-  width: 200px;
- }
+// ion-content.background{
+//   --background: url(www/img/fondos/newalgas.svg) 0 0/100% 100% no-repeat;
+// }
