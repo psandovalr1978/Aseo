@@ -1,27 +1,94 @@
+<ion-content  scroll-y="true">
+  <ion-item color="success">
+    <ion-searchbar></ion-searchbar>
+    <ion-icon slot="icon-only" slot="end" name="cart-sharp"></ion-icon>
+  </ion-item>
 
-<ion-content >
-  <ion-grid>
-    <ion-item color="success">
-      <ion-searchbar></ion-searchbar>
-      <ion-icon slot="icon-only" slot="end" name="cart-sharp"></ion-icon>
-    </ion-item>
-  </ion-grid>
-  <!-- Logo -->
+  <virtual-scroll-element class="ion-content-scroll-host">
 
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide *ngFor="let item of slide">
-      <ion-card>
-        <ion-img [src]="item.img"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>{{item.subTitulo}}</ion-card-subtitle>
-          <ion-card-title style="font-size: 14px;">{{item.titulo}}</ion-card-title>
-        </ion-card-header>
-        <!-- <ion-card-content style="font-size: 10px; text-align:justify;">
-            <p>{{item.descripcion}}</p>
-          </ion-card-content> -->
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let item of slide">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Combos</ion-card-subtitle>
+            <ion-card-title>...</ion-card-title>
+          </ion-card-header>
+          <ion-img [src]="item.img"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>{{item.subTitulo}}</ion-card-subtitle>
+            <ion-card-title style="font-size: 14px;">{{item.titulo}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col size="4">
+          <ion-button color="success">
+            <ion-icon slot="icon-only" style="font-size: 22px;" name="flask-sharp"></ion-icon>
+
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button color="success">
+            <ion-icon slot="icon-only" style="font-size: 22px;" name="ice-cream-sharp"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button color="success">
+            <ion-icon slot="icon-only" style="font-size: 22px;" name="color-filter-sharp"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Destacamos para Hoy</ion-card-subtitle>
+        <ion-card-title>Recien Llegados</ion-card-title>
+      </ion-card-header>
+      <ion-list>
+        <ion-item *ngFor="let item of listProd"
+          class="item-has-start-slot item ios item-fill-none in-list hydrated item-label" role="listitem">
+          <ion-avatar slot="start" class="ios hydrated">
+            <img src="{{item.img}}">
+          </ion-avatar>
+          <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+            <h2>{{item.nombre}}</h2>
+            <h3>{{item.contenido}}</h3>
+            <h3>Precio</h3>
+            <p>$ {{item.precio}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+  </virtual-scroll-element>
+  <ion-footer collapse="fade">
+    <ion-toolbar>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="3">
+            <ion-button color="light">
+              <ion-icon slot="icon-only" name="home-sharp"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button color="light">
+              <ion-icon slot="icon-only" name="heart-sharp"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="3"> <ion-button color="light">
+            <ion-icon slot="icon-only" name="accessibility-sharp"></ion-icon>
+          </ion-button></ion-col>
+          <ion-col size="3"> <ion-button color="light">
+            <ion-icon slot="icon-only" name="create-sharp"></ion-icon>
+          </ion-button></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
 
 
 </ion-content>

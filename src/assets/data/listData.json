@@ -1,0 +1,32 @@
+[
+  {
+    "img":"https://cdn-icons-png.flaticon.com/512/1312/1312091.png",
+    "contenido":"contenido Promocional",
+    "precio":2000,
+    "nombre":"Producto 1"
+  },
+  {
+    "img":"https://cdn-icons-png.flaticon.com/512/1044/1044967.png",
+    "contenido":"Contenido Promocional",
+    "precio":3000,
+    "nombre":"Producto 2"
+  },
+  {
+    "img":"https://cdn-icons-png.flaticon.com/512/1312/1312307.png",
+    "contenido":"Contenido Promocional",
+    "precio":6000,
+    "nombre":"Producto 3"
+  },
+  {
+    "img":"https://cdn-icons-png.flaticon.com/512/2674/2674486.png",
+    "Contenido":"Contenido Promocional",
+    "precio":1000,
+    "nombre":"Producto 4"
+  },
+  {
+    "img":"https://cdn-icons-png.flaticon.com/512/2674/2674486.png",
+    "contenido":"Contenido Promocional",
+    "precio":7000,
+    "nombre":"Producto 5"
+  }
+]
