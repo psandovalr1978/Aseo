@@ -1,98 +1,46 @@
-<ion-content  scroll-y="true">
+<ion-content scroll-y="true">
   <ion-item color="success">
-    <ion-searchbar></ion-searchbar>
-    <ion-button  routerLink="/">
-      <ion-icon slot="icon-only"  name="cart-sharp" ></ion-icon>
-    </ion-button>
+    <ion-label><h5>{{usuario}}</h5></ion-label>
+    
   </ion-item>
-
-  <virtual-scroll-element class="ion-content-scroll-host">
-
-    <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide *ngFor="let item of slide">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Combos</ion-card-subtitle>
-            <ion-card-title>...</ion-card-title>
-          </ion-card-header>
-          <ion-img [src]="item.img"></ion-img>
-          <ion-card-header>
-            <ion-card-subtitle>{{item.subTitulo}}</ion-card-subtitle>
-            <ion-card-title style="font-size: 14px;">{{item.titulo}}</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-
-    <ion-grid>
-      <ion-row class="ion-text-center">
-        <ion-col size="4">
-          <ion-button color="success">
-            <ion-icon slot="icon-only" style="font-size: 22px;" name="flask-sharp"></ion-icon>
-
-          </ion-button>
-        </ion-col>
-        <ion-col size="4">
-          <ion-button color="success">
-            <ion-icon slot="icon-only" style="font-size: 22px;" name="ice-cream-sharp"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="4">
-          <ion-button color="success">
-            <ion-icon slot="icon-only" style="font-size: 22px;" name="color-filter-sharp"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
+  <ion-item-divider>
+    <ion-label>
+      Promociones
+    </ion-label>
+  </ion-item-divider>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let item of slide">
+      <ion-card>
+        <ion-img [src]="item.img"></ion-img>
+        <ion-card-header>
+          <!-- <ion-card-subtitle>{{item.subTitulo}}</ion-card-subtitle>
+            <ion-card-title style="font-size: 14px;">{{item.titulo}}</ion-card-title> -->
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-item-divider>
+    <ion-label>
+      Servicios
+    </ion-label>
+  </ion-item-divider>
+  <div *ngFor="let item of listServicios">
     <ion-card>
       <ion-card-header>
-        <ion-card-subtitle>Destacamos para Hoy</ion-card-subtitle>
-        <ion-card-title>Recien Llegados</ion-card-title>
+        <ion-img
+          [src]="item.urlImg">
+        </ion-img>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>{{item.nombre}}</ion-card-title>
       </ion-card-header>
-      <ion-list>
-        <ion-item *ngFor="let item of listProd"
-          class="item-has-start-slot item ios item-fill-none in-list hydrated item-label" role="listitem">
-          <ion-avatar slot="start" class="ios hydrated">
-            <img src="{{item.img}}">
-          </ion-avatar>
-          <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
-            <h2>{{item.nombre}}</h2>
-            <h3>{{item.contenido}}</h3>
-            <h3>Precio</h3>
-            <p>$ {{item.precio}}</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
+  
+      <ion-card-content>
+        {{item.descripcion}}
+      </ion-card-content>
+      <ion-button fill="clear">Agregar al Carrito</ion-button>
     </ion-card>
+  </div>
 
-  </virtual-scroll-element>
-  <!-- <ion-footer collapse="fade">
-    <ion-toolbar>
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size="3">
-            <ion-button color="light" routerLink="/">
-              <ion-icon slot="icon-only" name="home-sharp"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="3">
-            <ion-button color="light" routerLink="/comentarios">
-              <ion-icon slot="icon-only" name="heart-sharp"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col size="3"> <ion-button color="light" routerLink="/login">
-            <ion-icon slot="icon-only" name="accessibility-sharp"></ion-icon>
-          </ion-button></ion-col>
-          <ion-col size="3"> <ion-button color="light" routerLink="/registro">
-            <ion-icon slot="icon-only" name="create-sharp"></ion-icon>
-          </ion-button></ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-toolbar>
-  </ion-footer> -->
-
-
+ 
 </ion-content>
-
 

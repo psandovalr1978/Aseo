@@ -1,5 +1,7 @@
+import { AppPage } from './../../e2e/src/app.po';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
 
 const routes: Routes = [
 
@@ -21,12 +23,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'comentarios',
-    loadChildren: () => import('./pages/comentarios/comentarios.module').then( m => m.ComentariosPageModule)
-  },
-  {
     path: 'carrito',
     loadChildren: () => import('./pages/carrito/carrito.module').then( m => m.CarritoPageModule)
+  },
+  {
+    path: 'casa-cliente',
+    loadChildren: () => import('./pages/casa-cliente/casa-cliente.module').then( m => m.CasaClientePageModule)
+  },
+  {
+    path: 'registrar-casa',
+    loadChildren: () => import('./pages/registrar-casa/registrar-casa.module').then( m => m.RegistrarCasaPageModule)
   },
 ];
 

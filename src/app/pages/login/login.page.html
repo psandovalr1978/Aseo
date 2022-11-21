@@ -6,32 +6,60 @@
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+
   <ion-card>
-    <ion-card-header>
-      <ion-card-title >Login</ion-card-title>
-    </ion-card-header>
     <ion-card-content>
-     <ion-grid fixed>
-      <ion-row>
-        <ion-col size="12">
-         <ion-item>
-          <ion-label position="floating">Usuario</ion-label>
-          <ion-input  type="text"></ion-input>
-         </ion-item>
-        </ion-col>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="floating">Contraseña</ion-label>
-            <ion-input  type="password"></ion-input>
-           </ion-item>
-        </ion-col>
-        <ion-col size="12">
-          <ion-button expand="block" color="primary">Ingresar</ion-button>
-        </ion-col>
-      </ion-row>
-     </ion-grid>
+      <form [formGroup]="formulario">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating">E-Mail</ion-label>
+                <ion-input formControlName="mail" type="text" required></ion-input>
+              </ion-item>
+              <ion-item *ngIf="mail.invalid && (mail.dirty || mail.touched)" lines="none">
+                <ion-text *ngIf="mail.errors?.['required']" color="danger" >
+                  <h6> Este campo es Requerido</h6>
+                </ion-text>
+                <ion-text *ngIf="mail.errors?.['email']" color="danger" >
+                  <h6>Este mail incorrecto</h6>
+                </ion-text>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input formControlName="pass" type="password" required></ion-input>
+              </ion-item>
+              <ion-item *ngIf="pass.invalid && (pass.dirty || pass.touched)" lines="none">
+                <ion-text *ngIf="pass.errors?.['required']" color="danger" >
+                  <h6>Este campo es Requerido</h6>
+                </ion-text>
+                <ion-text *ngIf="pass.errors?.['minLength']" color="danger" >
+                  <h6>El mínino de acaracteres es 6</h6>
+                </ion-text>
+                <ion-text *ngIf="pass.errors?.['maxLength']" color="danger" >
+                  <h6>El máximo de acaracteres es 10</h6>
+                </ion-text>
+              </ion-item>
+            </ion-col>
+            <ion-col size="12">
+              <ion-button expand="full" color="primary"  (click)="login()" >
+                Ingresar
+              </ion-button>
+            </ion-col>
+            <ion-col size="12" >
+             <ion-button expand="block" color="secondary" routerLink="/registro" fill="clear" shape="round">
+                Registrar
+             </ion-button>
+            </ion-col>
+          
+          </ion-row>
+        </ion-grid>
+      </form>
     </ion-card-content>
   </ion-card>
+  
+
 </ion-content>

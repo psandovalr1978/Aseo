@@ -8,48 +8,115 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Usuario</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size="12">
+  
+
+  <form [formGroup]="formulario">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Rut</ion-label>
+            <ion-input formControlName="rut" type="text" required></ion-input>
+          </ion-item>
+          <ion-item *ngIf="mail.invalid && (rut.dirty || rut.touched)" lines="none">
+            <ion-text *ngIf="rut.errors?.['required']" color="danger" >
+              <h6> Este campo es Requerido</h6>
+            </ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">E-Mail</ion-label>
+            <ion-input formControlName="mail" type="text" required></ion-input>
+          </ion-item>
+          <ion-item *ngIf="mail.invalid && (mail.dirty || mail.touched)" lines="none">
+            <ion-text *ngIf="mail.errors?.['required']" color="danger" >
+              <h6> Este campo es Requerido</h6>
+            </ion-text>
+            <ion-text *ngIf="mail.errors?.['email']" color="danger" >
+              <h6>Este mail incorrecto</h6>
+            </ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input formControlName="nombre" type="text" required></ion-input>
+          </ion-item>
+          <ion-item *ngIf="mail.invalid && (nombre.dirty || nombre.touched)" lines="none">
+            <ion-text *ngIf="nombre.errors?.['required']" color="danger" >
+              <h6> Este campo es Requerido</h6>
+            </ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Apellidos</ion-label>
+            <ion-input formControlName="apellidos" type="text" required></ion-input>
+          </ion-item>
+          <ion-item *ngIf="mail.invalid && (apellidos.dirty || apellidos.touched)" lines="none">
+            <ion-text *ngIf="apellidos.errors?.['required']" color="danger" >
+              <h6> Este campo es Requerido</h6>
+            </ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input formControlName="telefono" type="text" required></ion-input>
+          </ion-item>
+          <ion-item *ngIf="mail.invalid && (telefono.dirty || telefono.touched)" lines="none">
+            <ion-text *ngIf="telefono.errors?.['required']" color="danger" >
+              <h6> Este campo es Requerido</h6>
+            </ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
             <ion-item>
-              <ion-label position="floating">Rut</ion-label>
-              <ion-input  type="text"></ion-input>
+              <ion-label position="floating">Comunas</ion-label>
+              <ion-select formControlName="idComuna" interface="action-sheet" placeholder="Selecione Comuna" >
+                <ion-select-option *ngFor="let item of listaComunas" value="{{item.id}}">{{item.nombre}}</ion-select-option>
+              </ion-select>
             </ion-item>
-          </ion-col>
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating">Nombre</ion-label>
-              <ion-input  type="text"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating">Apellido</ion-label>
-              <ion-input  type="text"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating">Telefono</ion-label>
-              <ion-input  type="text"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="12">
-            <ion-item>
-              <ion-label position="floating">Direccion</ion-label>
-              <ion-input  type="text"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="12">
-            <ion-button expand="block" color="primary">Registrar</ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input formControlName="direccionCliente" type="text" required></ion-input>
+          </ion-item>
+          <ion-item *ngIf="mail.invalid && (direccionCliente.dirty || direccionCliente.touched)" lines="none">
+            <ion-text *ngIf="direccionCliente.errors?.['required']" color="danger" >
+              <h6> Este campo es Requerido</h6>
+            </ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input formControlName="pass" type="password" required></ion-input>
+          </ion-item>
+          <ion-item *ngIf="pass.invalid && (pass.dirty || pass.touched)" lines="none">
+            <ion-text *ngIf="pass.errors?.['required']" color="danger" >
+              <h6>Este campo es Requerido</h6>
+            </ion-text>
+            <ion-text *ngIf="pass.errors?.['minLength']" color="danger" >
+              <h6>El mínino de acaracteres es 6</h6>
+            </ion-text>
+            <ion-text *ngIf="pass.errors?.['maxLength']" color="danger" >
+              <h6>El máximo de acaracteres es 10</h6>
+            </ion-text>
+          </ion-item>
+        </ion-col>
+
+        
+        <ion-col size="12">
+          <ion-button [disabled]="!formulario.valid"  expand="full"  color="primary"  (click)="registrar()" >
+            Registrar Cliente
+          </ion-button>
+        </ion-col>
+     
+      </ion-row>
+    </ion-grid>
+  </form>
+  
 </ion-content>
