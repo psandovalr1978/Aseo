@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { GlobalServicesService } from './global-services.service';
 import {  ProductListModelo, SlidePageModelo, SlideServicio } from './service/slideService';
+import {tap} from "rxjs/operators"
+import { Router, Routes } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,24 +15,19 @@ import {  ProductListModelo, SlidePageModelo, SlideServicio } from './service/sl
 })
 export class AppComponent implements OnInit {
 
-  slideOpts = {
-    initialSlide: 0,
-    speed: 900,
-    startAutoplay:true,
-  };
-  slide:SlidePageModelo[];
+  get cantidad(){
+    return this.globalServicesService.cantidadCarrito;
+  }
 
-  listProd:ProductListModelo[];
-  constructor(private slideService:SlideServicio) {
+  constructor(private globalServicesService:GlobalServicesService, private router: Router) {
   }
   ngOnInit(): void {
-    this.slideService.GetSlidePrueba().subscribe((x:SlidePageModelo[])=> {
-      this.slide = x
-    });
-    this.slideService.GetListPrueba().subscribe((x:ProductListModelo[])=>{
-      this.listProd= x;
-    })
   }
 
+  validarSesionUsuario(){
+    if(this.globalServicesService.logeado){
+      this.router.navigate(['/login']);
+    }
+  }
 
 }

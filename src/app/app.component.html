@@ -1,20 +1,22 @@
-<ion-app>
+
+<!-- <ion-app>
   <ion-router-outlet></ion-router-outlet>
-</ion-app>
+</ion-app> -->
 
 <ion-tabs >
   <ion-tab-bar color="success" slot="bottom,top">
-    <ion-tab-button tab="tab1" routerLink="/comentarios">
-      <ion-icon name="heart-sharp"></ion-icon>
-      <ion-label>Comentarios</ion-label>
+    <ion-tab-button tab="carrito" (click)="validarSesionUsuario()"  >
+      <ion-icon name="cart-sharp"></ion-icon>
+      <ion-label>Carrito</ion-label>
+      <ion-badge>{{cantidad}}</ion-badge>
     </ion-tab-button>
-    <ion-tab-button tab="tab2" routerLink="/login">>
+    <ion-tab-button tab="login" (click)="validarSesionUsuario()" >
       <ion-icon name="accessibility-sharp"></ion-icon>
       <ion-label>Login</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="tab3" routerLink="/registro">
-      <ion-icon name="create-sharp"></ion-icon>
-      <ion-label>Registro</ion-label>
+    <ion-tab-button tab="casa-cliente" (click)="validarSesionUsuario()">
+      <ion-icon name="home-sharp"></ion-icon>
+      <ion-label>Domicilios</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

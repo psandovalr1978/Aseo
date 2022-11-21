@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { GlobalServicesService } from 'src/app/global-services.service';
 
 @Component({
-  selector: 'app-carrito',
-  templateUrl: './carrito.page.html',
-  styleUrls: ['./carrito.page.scss'],
+  selector: 'app-casa-cliente',
+  templateUrl: './casa-cliente.page.html',
+  styleUrls: ['./casa-cliente.page.scss'],
 })
-export class CarritoPage implements OnInit {
+export class CasaClientePage implements OnInit {
 
   constructor(private globalServicesService:GlobalServicesService,private router: Router,) { }
 

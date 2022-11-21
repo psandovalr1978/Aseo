@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ComentariosPageRoutingModule } from './comentarios-routing.module';
+import { CasaClientePageRoutingModule } from './casa-cliente-routing.module';
 
-import { ComentariosPage } from './comentarios.page';
+import { CasaClientePage } from './casa-cliente.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComentariosPageRoutingModule
+    CasaClientePageRoutingModule
   ],
-  declarations: [ComentariosPage]
+  declarations: [CasaClientePage]
 })
-export class ComentariosPageModule {}
+export class CasaClientePageModule {}

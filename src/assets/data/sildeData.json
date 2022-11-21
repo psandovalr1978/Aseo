@@ -1,26 +1,21 @@
 [
   {
-    "img": "https://klimper.cl/wp-content/uploads/2018/08/Klimper-limpieza-01.png",
+    "img": "https://www.ayda.cl/media/catalog/product/cache/5435a3b21526e5a464570baf7fa10751/l/i/limpieza-planchado.jpg",
     "titulo": "Klimpler",
     "subTitulo":"Limpieza Para Todo Uso",
     "descripcion": "Ha desarrollado productos de la más alta calidad, contando con su propio laboratorio, para resolver con mayor prontitud y profesionalismo los requerimientos de cada cliente.Conscientes de los altos niveles de exigencia en el mercado, fabricamos y distribuimos más de 100 productos relacionados con la limpieza e higienización"
   },
   {
-    "img": "https://www.elunicornio.cl/wp-content/uploads/2018/03/fabrica-productos-de-limpieza2.png",
+    "img": "https://www.ayda.cl/media/catalog/product/cache/5435a3b21526e5a464570baf7fa10751/f/o/foto_sillon.jpg",
     "titulo": "Uno Servicios Auno",
     "subTitulo":"Para La Oficina",
     "descripcion": "El propósito de suministrar personal especializado para prestar servicios de aseo y mantenimiento, basados en nuestra experiencia con un grupo de personas capacitadas en todas las áreas de limpieza. Brindando atención personalizada y permanente con eficiencia y agilidad a cada uno de nuestros clientes."
   },
   {
-    "img": "https://bodegac.cl/wp-content/uploads/2021/01/caja-articulos-aseo.png",
+    "img": "https://www.ayda.cl/media/catalog/product/cache/5435a3b21526e5a464570baf7fa10751/l/i/limpieza-profunda.jpg",
     "titulo": "To Day",
     "subTitulo":"Para todo el día y más.",
     "descripcion": ""
-  },
-  {
-    "img": "https://corpemat.com/wp-content/uploads/2018/04/articulos-de-limpieza.png",
-    "titulo": "Seek",
-    "subTitulo":"La Mejor Calidad ",
-    "descripcion": "Un sin fin de cosas para el día a día"
   }
+
 ]
