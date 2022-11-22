@@ -6,7 +6,85 @@
     <ion-title>Registrar Casa</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Agregar Casa</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formulario" (ngSubmit)="guardar()">
+        <ion-item>
+          <ion-label position="floating">Nombre <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required formControlName="nombre" type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" lines="none">
+          <ion-text *ngIf="nombre.errors?.['required']" color="danger">
+            <p> Este campo es requerido</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Dirección <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required formControlName="direccion" type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="nombre.invalid && (direccion.dirty || direccion.touched)" lines="none">
+          <ion-text *ngIf="direccion.errors?.['required']" color="danger">
+            <p> Este campo es requerido</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Comunas <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-select required formControlName="idComuna" interface="action-sheet" placeholder="Selecione Comuna">
+            <ion-select-option *ngFor="let item of listaComunas" value="{{item.id}}">{{item.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item *ngIf="idComuna.invalid && (idComuna.dirty || idComuna.touched)" lines="none">
+          <ion-text *ngIf="idComuna.errors?.['required']" color="danger">
+            <p> Este campo es requerido</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nro Habitaciones <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required formControlName="nroHabitacion" type="number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="nroHabitacion.invalid && (nroHabitacion.dirty || nroHabitacion.touched)" lines="none">
+          <ion-text *ngIf="nroHabitacion.errors?.['required']" color="danger">
+            <p> Este campo es requerido</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Metros Cuadrados <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required formControlName="metroC" type="number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="metroC.invalid && (metroC.dirty || metroC.touched)" lines="none">
+          <ion-text *ngIf="metroC.errors?.['required']" color="danger">
+            <p> Este campo es requerido</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nro Pisos<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required formControlName="pisos" type="number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="pisos.invalid && (pisos.dirty || pisos.touched)" lines="none">
+          <ion-text *ngIf="pisos.errors?.['required']" color="danger">
+            <p> Este campo es requerido</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Comentario <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-textarea  formControlName="cometario">
+          </ion-textarea>
+        </ion-item>
+        <ion-button block color="primary" expand="full"  type="submit" [disabled]="formulario.invalid">
+          Guardar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

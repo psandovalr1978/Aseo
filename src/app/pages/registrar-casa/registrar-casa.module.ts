@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule, FormBuilder, FormControl,FormGroup } from '@angular/forms';
+
 
 import { IonicModule } from '@ionic/angular';
 
@@ -12,6 +13,7 @@ import { RegistrarCasaPage } from './registrar-casa.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     RegistrarCasaPageRoutingModule
   ],

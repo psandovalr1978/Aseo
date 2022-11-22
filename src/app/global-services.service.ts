@@ -58,6 +58,20 @@ export class IngresoCliente
     idComuna :number
     direccionCliente :string
 }
+
+export class DireccionCliente {
+  id: number;
+  rut: string
+  mail: string
+  nombre: string
+  regionComuna: string
+  direccion: string
+  idComuna: number;
+  nroHabitacion: number
+  metroC: number;
+  cometario: string
+  pisos: number;
+}
 @Injectable({
   providedIn: 'root'
 })
